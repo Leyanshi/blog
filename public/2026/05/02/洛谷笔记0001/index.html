@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en"><head>
+<title>洛谷笔记0001 - Whaaaaaaaaaaaaaaat?</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="description" content="今日（和昨日）过招 P1000 超级玛丽游戏 P1001 A+B Problem P1003 三连击 P1307 数字反转 P1035 级数求和 P1046 陶陶摘苹果 P1047 校门外的树 P1085 校门外的树 P1089 津津的储蓄计划 P1151 子数整数  难题难题是 P1089 津津的储蓄计划；题目根本理不清头绪，点进“题目反馈”发现一个修正，这个版本好多了。原始代码： 123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷笔记0001">
+<meta property="og:url" content="https://leyanshi.me/2026/05/02/%E6%B4%9B%E8%B0%B7%E7%AC%94%E8%AE%B00001/index.html">
+<meta property="og:site_name" content="Whaaaaaaaaaaaaaaat?">
+<meta property="og:description" content="今日（和昨日）过招 P1000 超级玛丽游戏 P1001 A+B Problem P1003 三连击 P1307 数字反转 P1035 级数求和 P1046 陶陶摘苹果 P1047 校门外的树 P1085 校门外的树 P1089 津津的储蓄计划 P1151 子数整数  难题难题是 P1089 津津的储蓄计划；题目根本理不清头绪，点进“题目反馈”发现一个修正，这个版本好多了。原始代码： 123456">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://free.picui.cn/free/2026/05/03/69f71e2d5eef7.png">
+<meta property="article:published_time" content="2026-05-02T10:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-03T10:12:39.514Z">
+<meta property="article:author" content="Leyanshi">
+<meta property="article:tag" content="luogu">
+<meta property="article:tag" content="oier">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="cpp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://free.picui.cn/free/2026/05/03/69f71e2d5eef7.png">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1777803172811">
+
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_5130876_c68vgtkky8.css">
+
+<link rel="stylesheet" href="/css/style.css?v=1777803172811">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1777803172811">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1777803172812"></script>
+
+ 
+
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://leyanshi.me/bg-blog.png)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="Leyanshi"><img src="https://leyanshi.me/lys-head.jpg" alt="Leyanshi"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Leyanshi">
+            <img src="https://leyanshi.me/lys-head.jpg" alt="Leyanshi" alt="Leyanshi">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>2</div>
+        <div><span>Tags</span>4</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://qm.qq.com/q/h5a0rOPOlW" title="我的QQ">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的QQ
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://afdian.com/a/inforigin" title="给我赞助">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                给我赞助
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/2026/02/28/friend-links/" title="友情链接">
+            <i class="mdui-list-item-icon nexmoefont lys-link"></i>
+            <div class="mdui-list-item-content">
+                友情链接
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="Search" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1777803172815"></script>
+
+
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/521323978"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/Leyanshi"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://discord.gg/D5HeTMcV4G"
+			target="_blank"
+			mdui-tooltip="{content: 'Discord'}"
+			style="
+				color: rgb(0, 108, 191);
+				background-color: rgba(0, 108, 191, .1);
+			"
+		>
+			<i
+				class="nexmoefont lys-discord"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/cpp/" style="font-size: 10px;">cpp</a> <a href="/tags/luogu/" style="font-size: 10px;">luogu</a> <a href="/tags/oier/" style="font-size: 10px;">oier</a> <a href="/tags/programming/" style="font-size: 10px;">programming</a>
+    </div>
+    
+      <script>
+        var maxTagcloud = parseInt(17);
+        var tags_length = parseInt(4);
+        var tags_arr = [];
+        for(var i = 0; i < tags_length; i++){
+          tags_arr.push(i);
+        }
+        tags_arr.sort(function (l, r) {
+          return Math.random() > 0.5 ? -1 : 1;
+        });
+        tags_arr = tags_arr.slice(0, maxTagcloud < tags_length ? tags_length - maxTagcloud : 0);
+        for(var tag_i = 0; tag_i < tags_arr.length; tag_i++){
+          document.getElementById("randomtagcloud").children[tags_arr[tag_i]].style.display = 'none';
+        }
+      </script>
+    
+  </div>
+
+    
+        
+        <!-- 一言 -->
+<div class="nexmoe-widget-wrap">
+  <h3 class="nexmoe-widget-title">
+    一言
+  </h3>
+  <div class="nexmoe-widget">
+    <ul class="hitokoto-box">
+      <li id="hitokoto_text_parent" class="hitokoto-text" hitokotoCategory="">
+        <a href="#" id="hitokoto_text">
+          
+        </a>
+        <a href="#" id="hitokoto_error_text" style="display: none;">
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  let hitokotoText = document.getElementById('hitokoto_text')
+  let hitokotoErroText = document.getElementById('hitokoto_error_text')
+  let hitokotoCategory = document.getElementById('hitokoto_text_parent').getAttribute('hitokotoCategory')
+  window.addEventListener('load', function () {
+    let url = 'https://v1.hitokoto.cn'
+    if (hitokotoCategory) {
+      url += '?c=' + hitokotoCategory
+    }
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        hitokotoText.innerText = "「 " + data.hitokoto + " 」 from " + data.from
+        hitokotoText.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      })
+      .catch((reason) => {
+        console.error(11, reason)
+        hitokotoText.style.display = 'none'
+        hitokotoErroText.style.display = 'block'
+      })
+  })
+</script>
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/">2026</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/05/02/%E6%B4%9B%E8%B0%B7%E7%AC%94%E8%AE%B00001/">洛谷笔记0001</a>
+          </li>
+        
+          <li>
+            <a href="/2026/02/28/start-blog/">Hello, Blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+   
+    <div class="nexmoe-copyright">
+        &copy; 2026 Leyanshi
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://beian.miit.gov.cn/">鲁ICP备2025180749号-1</a><br><a href="https://icp.gov.moe/?keyword=20255507" target="_blank">萌ICP备20255507号</a>
+
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://leyanshi.me/bg-blog.png" alt="洛谷笔记0001" loading="lazy">
+            <h1>洛谷笔记0001</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2026年05月02日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h3 id="今日（和昨日）过招"><a href="#今日（和昨日）过招" class="headerlink" title="今日（和昨日）过招"></a>今日（和昨日）过招</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1000">P1000 超级玛丽游戏</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1001">P1001 A+B Problem</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1008">P1003 三连击</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1307">P1307 数字反转</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1035">P1035 级数求和</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1046">P1046 陶陶摘苹果</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1047">P1047 校门外的树</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1085">P1085 校门外的树</a></li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1089">P1089 津津的储蓄计划</a></strong></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1151">P1151 子数整数</a></li>
+</ul>
+<h3 id="难题"><a href="#难题" class="headerlink" title="难题"></a>难题</h3><p>难题是 P1089 津津的储蓄计划；题目根本理不清头绪，点进“题目反馈”发现一个<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/ticket/FYHX231219">修正</a>，这个版本好多了。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://free.picui.cn/free/2026/05/03/69f71e2d5eef7.png" alt="a04f1907-aa11-4642-8aa7-0b2edc55736d.png" data-caption="a04f1907-aa11-4642-8aa7-0b2edc55736d.png" loading="lazy"><br>原始代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">moneys</span><span class="params">(<span class="number">12</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="comment">// not negative numbers, 100rmb:1moneys</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++) &#123;</span><br><span class="line">		cin &gt;&gt; moneys[i];</span><br><span class="line">		moneys[i] = moneys[i] / <span class="number">100</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">double</span> walletMoney = <span class="number">0</span>;</span><br><span class="line">	<span class="type">double</span> bankMoney = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++) &#123;</span><br><span class="line">		walletMoney += <span class="number">3</span>;</span><br><span class="line">		bankMoney += <span class="built_in">floor</span>(walletMoney - moneys[i]);</span><br><span class="line">		walletMoney -= <span class="built_in">floor</span>(walletMoney - moneys[i]);</span><br><span class="line">		walletMoney -= moneys[i];</span><br><span class="line">		<span class="keyword">if</span>(walletMoney&lt;<span class="number">0</span>)&#123;</span><br><span class="line">			cout &lt;&lt; -(i + <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; walletMoney * <span class="number">100</span>+bankMoney*<span class="number">100</span>*<span class="number">1.2</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过自（迪）我（普）找（西）错（克），我找出了错误：</p>
+<ol>
+<li>bro的按张保存的制度太™复杂了</li>
+<li>bro忘记输出负数月份了(没看题)<br>可能还有忘记了的错误，反正bro重写了一遍，如下：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> budget[<span class="number">12</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++) &#123;</span><br><span class="line">        cin &gt;&gt; budget[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> hand = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> mom = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++) &#123;</span><br><span class="line">        hand += <span class="number">300</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (hand &lt; budget[i]) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;-&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> left = hand - budget[i];</span><br><span class="line">        <span class="keyword">if</span> (left &gt;= <span class="number">100</span>) &#123;</span><br><span class="line">            <span class="type">int</span> save = (left / <span class="number">100</span>) * <span class="number">100</span>;</span><br><span class="line">            mom += save;</span><br><span class="line">            hand = left - save;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            hand = left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> total = mom * <span class="number">1.2</span> + hand;</span><br><span class="line">    cout &lt;&lt; total &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="得到的经验"><a href="#得到的经验" class="headerlink" title="得到的经验"></a>得到的经验</h2><ol>
+<li>永远不要给一个题目乱换单位</li>
+<li>别™整太复杂</li>
+<li>int除一下再乘回来可以向下取整</li>
+</ol>
+<h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1>
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/cpp/" rel="tag">cpp</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/luogu/" rel="tag">luogu</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/oier/" rel="tag">oier</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/programming/" rel="tag">programming</a>
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1777803172801"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js" data-repo="Leyanshi/giscus" data-repo-id="R_kgDORa8L9A" data-category="Announcements" data-category-id="DIC_kwDORa8L9M4C3Y7N" data-mapping="pathname" data-strict="0" data-reactions-enabled="1"  data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
+      
+
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%EF%BC%88%E5%92%8C%E6%98%A8%E6%97%A5%EF%BC%89%E8%BF%87%E6%8B%9B"><span class="toc-number">1.</span> <span class="toc-text">今日（和昨日）过招</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%BE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">难题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%97%E5%88%B0%E7%9A%84%E7%BB%8F%E9%AA%8C"><span class="toc-number"></span> <span class="toc-text">得到的经验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%8C"><span class="toc-number"></span> <span class="toc-text">完</span></a>
+                </div>
+            </button>
+            
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="Search" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>

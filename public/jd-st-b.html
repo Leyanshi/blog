@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<!-- Mirrored from leyanshi.me/jd-st-b by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 May 2026 09:28:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>极简 · 选择小游戏</title>
+    <!-- Semantic UI 极简核心样式 + 简洁图标 -->
+    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/semantic-ui%402.5.0/dist/semantic.min.css">
+    <!-- 完全极简，无额外自定义覆盖，只保留基础呼吸 -->
+    <style>
+        /* 极简微调：让页面更「空灵」一些，保留大量留白 */
+        body {
+            background: #f9fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .main-container {
+            max-width: 720px;
+            width: 100%;
+            padding: 2rem 1.5rem;
+        }
+        /* 让标题更轻 */
+        h1.ui.header {
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        h1.ui.header .sub.header {
+            font-weight: 300;
+            opacity: 0.8;
+        }
+        /* 卡片内文字居中，保留极简风味 */
+        .choice-card {
+            text-align: center;
+            transition: all 0.1s ease;
+            cursor: pointer;
+            min-height: 140px;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
+            border: 1px solid rgba(0,0,0,0.05) !important;
+        }
+        .choice-card .header {
+            font-weight: 400;
+            font-size: 1.4rem;
+            margin-bottom: 0.25rem;
+        }
+        .choice-card .description {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        /* 选中高亮 —— 极简的灰色变化，不加夸张色彩 */
+        .choice-card.selected {
+            background: #f0f2f5 !important;
+            border: 1px solid rgba(0,0,0,0.15) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important;
+        }
+        /* 结果区域留白舒适 */
+        .result-area {
+            margin-top: 3rem;
+            text-align: center;
+            min-height: 100px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 2rem;
+        }
+        .reset-button {
+            margin-top: 1.5rem;
+        }
+        /* 让图标也极淡 */
+        .icon.circular {
+            background: none !important;
+            box-shadow: none !important;
+            font-size: 2.5rem !important;
+            margin-bottom: 0.25rem;
+            color: #434343 !important;
+            opacity: 0.7;
+        }
+        /* 极简按钮 */
+        .ui.basic.button {
+            font-weight: 300;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+    <!-- 极简标题：只有一句话 + 微表情 -->
+    <h1 class="ui header center aligned" style="margin-bottom: 2.5rem;">
+        <div class="content">
+            今天选什么 ？
+            <div class="sub header">轻轻一点 · 让直觉做决定</div>
+        </div>
+    </h1>
+
+    <!-- 选择卡片容器 ｜ 三个选项构成最简单的“小游戏” -->
+    <div class="ui stackable three column grid">
+        <!-- 选项 1 : 石头 -->
+        <div class="column">
+            <div class="ui card choice-card" data-choice="石头" id="choice-rock">
+                <div class="content">
+                    <i class="hand rock icon circular"></i>
+                    <div class="header">石头</div>
+                    <div class="description">坚如磐石</div>
+                </div>
+            </div>
+        </div>
+        <!-- 选项 2 : 布 -->
+        <div class="column">
+            <div class="ui card choice-card" data-choice="布" id="choice-paper">
+                <div class="content">
+                    <i class="hand paper icon circular"></i>
+                    <div class="header">布</div>
+                    <div class="description">包容万象</div>
+                </div>
+            </div>
+        </div>
+        <!-- 选项 3 : 剪刀 -->
+        <div class="column">
+            <div class="ui card choice-card" data-choice="剪刀" id="choice-scissors">
+                <div class="content">
+                    <i class="hand scissors icon circular"></i>
+                    <div class="header">剪刀</div>
+                    <div class="description">干脆利落</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 极简结果区：显示你的选择 & 随机对手 & 胜负判定（这就是游戏的小趣味）-->
+    <div class="result-area">
+        <div class="ui large text" style="font-weight: 300; opacity: 0.9;">
+            <!-- 动态内容由js填充 -->
+            <span id="player-choice-display">—</span>
+            <span style="margin: 0 1rem; opacity:0.4;">⚡</span>
+            <span id="opponent-choice-display">—</span>
+        </div>
+        <div class="ui huge header" style="margin-top: 1rem; font-weight: 300; letter-spacing: 1px;" id="game-result">
+            等您选择
+        </div>
+        <!-- 重置按钮 (极简) 但保留一个小玩法: 重新清空/挑战 -->
+        <div class="reset-button">
+            <button class="ui basic button" id="reset-game">
+                <i class="redo alternate icon"></i> 新的一局
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 极小JavaScript 仅实现选择小游戏逻辑：石头剪刀布规则 -->
+<script>
+    (function() {
+        // 获取所有卡片、显示区域
+        const cards = document.querySelectorAll('.choice-card');
+        const playerSpan = document.getElementById('player-choice-display');
+        const opponentSpan = document.getElementById('opponent-choice-display');
+        const resultEl = document.getElementById('game-result');
+
+        // 对手的可能选择
+        const options = ['石头', '布', '剪刀'];
+
+        // 清除所有卡片的高亮selected类
+        function clearSelected() {
+            cards.forEach(card => {
+                card.classList.remove('selected');
+            });
+        }
+
+        // 根据玩家和对手决定胜负字符串 (极简: 只显示 赢/输/平)
+        function getResultText(player, opponent) {
+            if (player === opponent) return '✨ 平局 ✨';
+            if (
+                (player === '石头' && opponent === '剪刀') ||
+                (player === '布' && opponent === '石头') ||
+                (player === '剪刀' && opponent === '布')
+            ) {
+                return '🎉 你赢了 🎉';
+            } else {
+                return '😶 机器赢了 😶';
+            }
+        }
+
+        // 处理卡片点击事件
+        function handleCardClick(e) {
+            // 通过closest获取卡片 (防止点到内部icon)
+            const card = e.currentTarget;
+            // 获取玩家选择
+            const playerChoice = card.getAttribute('data-choice');
+
+            // 随机对手选择
+            const randomIndex = Math.floor(Math.random() * options.length);
+            const opponentChoice = options[randomIndex];
+
+            // 更新UI显示
+            playerSpan.textContent = playerChoice;
+            opponentSpan.textContent = opponentChoice;
+
+            // 胜负结果
+            const resultText = getResultText(playerChoice, opponentChoice);
+            resultEl.textContent = resultText;
+
+            // 高亮当前选中卡片 (先清除所有高亮，再加到当前)
+            clearSelected();
+            card.classList.add('selected');
+        }
+
+        // 为每个卡片绑定点击事件
+        cards.forEach(card => {
+            card.addEventListener('click', handleCardClick);
+        });
+
+        // 重置按钮：清空所有内容和高亮
+        const resetBtn = document.getElementById('reset-game');
+        resetBtn.addEventListener('click', function() {
+            // 清除高亮
+            clearSelected();
+            // 重置显示区域
+            playerSpan.textContent = '—';
+            opponentSpan.textContent = '—';
+            resultEl.textContent = '等您选择';
+        });
+
+        // 附加小细节: 如果双击空白处没有反应, 但保留极简 —— 已满足
+        // 极简主义不需要初始化额外状态，因为起始已经是'—'和'等您选择'
+    })();
+</script>
+
+<!-- 可选的极简说明脚注：完全没有多余元素 只有浮动透明感 -->
+<div style="text-align:center; margin-top: 1rem; opacity:0.3; font-size:0.8rem;">
+    · 指尖抉择 ·
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"3771a1474de746d5afb50fb08cffef3f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from leyanshi.me/jd-st-b by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 May 2026 09:28:36 GMT -->
+</html>

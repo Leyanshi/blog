@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<!-- Mirrored from leyanshi.me/games by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 May 2026 09:27:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>小游戏选择器</title>
+    <!-- Semantic UI 纯净极简核心库 (仅使用轻量级CSS) -->
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+    <style>
+        /* 极微自定义，仅保证垂直居中与背景舒适，不破坏Semantic极简美学 */
+        body {
+            background: #f9fafc;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .game-container {
+            max-width: 700px;
+            width: 90%;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        /* 标题区：只用极简文字，不加多余装饰 */
+        .game-container h2 {
+            font-weight: 300;
+            font-size: 2.2rem;
+            margin: 0.5rem 0 1.8rem 0;
+            color: #1e2b3c;
+            letter-spacing: 1px;
+        }
+        .game-container h2 i {
+            color: #2185d0;  /* Semantic UI 基本蓝色 */
+            margin-right: 0.3rem;
+        }
+        /* 按钮组网格：小清新的间距，极简主义 */
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0 0.8rem 0;
+        }
+        /* 语义按钮微调：更干净、舒服的圆角与阴影 */
+        .ui.button {
+            border-radius: 40px !important;
+            font-weight: 400;
+            padding: 1.2rem 2rem;
+            font-size: 1.3rem;
+            flex: 0 1 auto;
+            min-width: 170px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.15s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .ui.button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -12px rgba(0,0,0,0.2);
+        }
+        /* 五个按钮采用清新配色 (保留Semantic可辨识度，但更柔和) */
+        .ui.flappy.button { background: #5bb4d1; color: white; }
+        .ui.minecraft.button { background: #7cb342; color: white; }
+        .ui.tappy.button { background: #ffb74d; color: white; }
+        .ui.gomoku.button { background: #ba68c8; color: white; }
+        .ui.rps.button { background: #f06292; color: white; }
+
+        /* 极简脚注 — 可有可无，仅增加一点呼吸感 */
+        .footer-note {
+            margin-top: 2.5rem;
+            opacity: 0.45;
+            font-size: 0.85rem;
+            color: #1e2b3c;
+        }
+        .footer-note i {
+            margin: 0 3px;
+        }
+        /* 确保移动端依然舒适 */
+        @media (max-width: 480px) {
+            .ui.button {
+                min-width: 140px;
+                font-size: 1.2rem;
+                padding: 1rem 1.2rem;
+            }
+            .game-container h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <!-- 极简标题，只一个游戏手柄图标 + 文字，符合语义 -->
+        <h2>
+            <i class="game icon"></i> 选个游戏 · 即刻出发
+        </h2>
+
+        <!-- 五个按钮分别跳转到指定网址 (采用真实的游戏官网/热门页，完全可点击) -->
+        <div class="button-grid">
+<a href="https://leyanshi.fun/" target="_blank" rel="noopener noreferrer" class="ui huge button flappy">
+                <i class="home icon"></i> 主页
+            </a>
+            <!-- Flappy Bird 按钮 (使用流行的flappybird.io 作为演示) -->
+            <a href="flappy/index.html" target="_blank" rel="noopener noreferrer" class="ui huge button flappy">
+                <i class="bird icon"></i> Flappy Bird
+            </a>
+
+            <!-- Minecraft 官网 -->
+            <a href="eaglercraft.html" target="_blank" rel="noopener noreferrer" class="ui huge button minecraft">
+                <i class="cube icon"></i> 网页版 Minecraft
+            </a>
+
+            <!-- Tappy 游戏 (使用知名tappy游戏站) -->
+            <a href="tappy-bird/index.html" target="_blank" rel="noopener noreferrer" class="ui huge button tappy">
+                <i class="tint icon"></i> Tappy
+            </a>
+
+            <!-- 五子棋 (推荐一个干净的五子棋小游戏) -->
+            <a href="5zq.html" target="_blank" rel="noopener noreferrer" class="ui huge button gomoku">
+                <i class="grid layout icon"></i> 五子棋
+            </a>
+
+            <!-- 剪刀石头布 (经典在线版) -->
+            <a href="jd-st-b.html" target="_blank" rel="noopener noreferrer" class="ui huge button rps">
+                <i class="hand scissors icon"></i> 剪刀石头布
+            </a>
+        </div>
+
+        <!-- 极简装饰脚注 (无功能，仅为视觉平衡) -->
+        <div class="footer-note">
+            <i class="circle outline icon"></i> 轻点按钮 · 直接跳转 <i class="circle outline icon"></i>
+        </div>
+    </div>
+
+    <!-- 语义UI附带极简javascript？不需要，纯粹的超链接跳转。但为了极微交互可忽略。 
+         没有任何多余的脚本，保持极简哲学。 -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"3771a1474de746d5afb50fb08cffef3f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from leyanshi.me/games by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 May 2026 09:27:26 GMT -->
+</html>
